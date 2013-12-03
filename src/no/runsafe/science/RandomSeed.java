@@ -1,6 +1,5 @@
 package no.runsafe.science;
 
-import net.minecraft.server.v1_6_R3.MathHelper;
 import no.runsafe.framework.api.IOutput;
 import no.runsafe.framework.api.event.IServerReady;
 
@@ -16,25 +15,25 @@ public class RandomSeed implements IServerReady
 	@Override
 	public void OnServerReady()
 	{
-		Random random = new Random(1337);
-		runRandomTest(random);
-		runRandomTest(random);
-		runRandomTest(random);
+		Random random = new Random(1337733171); // Random seed!
+
+		for (int x = 0; x < 200; x++)
+			for (int z = 0; z < 200; z++)
+				for (int y = 0; y < 100; y++)
+					runBlockTest(random, x, y, z);
+
+		write("Counted: " + countedBlocks);
 	}
 
-	private void runRandomTest(Random random)
+	private void runBlockTest(Random random, int x, int y, int z)
 	{
-		float randomInt = random.nextFloat();
-		write(randomInt);
+		countedBlocks++;
 
-		float randomIntPied = randomInt * (float) Math.PI;
-		write(randomIntPied);
+		int xc = x + random.nextInt(8) - random.nextInt(8);
+		int yc = y + random.nextInt(4) - random.nextInt(4);
+		int zc = z + random.nextInt(8) - random.nextInt(8);
 
-		double randomIntPiedSin = MathHelper.sin(randomIntPied);
-		write(randomIntPiedSin);
-
-		double randomIntPiedCos = MathHelper.cos(randomIntPied);
-		write(randomIntPiedCos);
+		write(String.format("X: %s, Y, %s, Z: %s", xc, yc, zc));
 	}
 
 	private void write(Object thing)
@@ -42,5 +41,7 @@ public class RandomSeed implements IServerReady
 		output.write(thing.toString());
 	}
 
+	private int countedBlocks = 0;
+	private int hitBlocks = 0;
 	private IOutput output;
 }
