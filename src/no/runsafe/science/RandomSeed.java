@@ -17,23 +17,9 @@ public class RandomSeed implements IServerReady
 	{
 		Random random = new Random(1337733171); // Random seed!
 
-		for (int x = 0; x < 200; x++)
-			for (int z = 0; z < 200; z++)
-				for (int y = 0; y < 100; y++)
-					runBlockTest(random, x, y, z);
-
-		write("Counted: " + countedBlocks);
-	}
-
-	private void runBlockTest(Random random, int x, int y, int z)
-	{
-		countedBlocks++;
-
-		int xc = x + random.nextInt(8) - random.nextInt(8);
-		int yc = y + random.nextInt(4) - random.nextInt(4);
-		int zc = z + random.nextInt(8) - random.nextInt(8);
-
-		write(String.format("X: %s, Y, %s, Z: %s", xc, yc, zc));
+		write(random.nextInt(8));
+		write(random.nextInt(4));
+		write(random.nextInt(8) - random.nextInt(8));
 	}
 
 	private void write(Object thing)
