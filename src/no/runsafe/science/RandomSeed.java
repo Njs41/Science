@@ -16,13 +16,14 @@ public class RandomSeed implements IServerReady
 	@Override
 	public void OnServerReady()
 	{
-		runRandomTest();
+		Random random = new Random(1337);
+		runRandomTest(random);
+		runRandomTest(random);
+		runRandomTest(random);
 	}
 
-	private void runRandomTest()
+	private void runRandomTest(Random random)
 	{
-		Random random = new Random(1337);
-
 		float randomInt = random.nextFloat();
 		write(randomInt);
 
