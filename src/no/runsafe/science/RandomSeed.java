@@ -1,5 +1,6 @@
 package no.runsafe.science;
 
+import no.runsafe.framework.api.IConsole;
 import no.runsafe.framework.api.IOutput;
 import no.runsafe.framework.api.event.IServerReady;
 
@@ -24,10 +25,10 @@ public class RandomSeed implements IServerReady
 
 	private void write(Object thing)
 	{
-		output.write(thing.toString());
+		output.logInformation(thing.toString());
 	}
 
 	private int countedBlocks = 0;
 	private int hitBlocks = 0;
-	private IOutput output;
+	private IConsole output;
 }
