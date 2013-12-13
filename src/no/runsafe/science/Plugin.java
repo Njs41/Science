@@ -7,7 +7,6 @@ public class Plugin extends RunsafePlugin
 	@Override
 	protected void PluginSetup()
 	{
-		addComponent(PacketTesting.class);
 		addComponent(TestPacketCommand.class);
 	}
 }
