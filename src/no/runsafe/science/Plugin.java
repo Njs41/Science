@@ -6,7 +6,7 @@ import no.runsafe.framework.features.Commands;
 public class Plugin extends RunsafePlugin
 {
 	@Override
-	protected void PluginSetup()
+	protected void pluginSetup()
 	{
 		// Framework features
 		addComponent(Commands.class);
