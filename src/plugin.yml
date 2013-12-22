@@ -1,5 +1,5 @@
 name: Science
-main: no.runsafe.science.Plugin
+main: no.runsafe.science.Science
 version: 1.0.@BUILD@
 authors: []
 depend: []

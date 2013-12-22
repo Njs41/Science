@@ -3,7 +3,7 @@ package no.runsafe.science;
 import no.runsafe.framework.RunsafePlugin;
 import no.runsafe.framework.features.Commands;
 
-public class Plugin extends RunsafePlugin
+public class Science extends RunsafePlugin
 {
 	@Override
 	protected void pluginSetup()
