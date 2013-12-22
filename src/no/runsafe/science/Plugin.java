@@ -10,8 +10,5 @@ public class Plugin extends RunsafePlugin
 	{
 		// Framework features
 		addComponent(Commands.class);
-
-		// Plugin components
-		addComponent(TestPacketCommand.class);
 	}
 }
