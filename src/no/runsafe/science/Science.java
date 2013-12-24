@@ -7,6 +7,6 @@ public class Science extends RunsafePlugin
 	@Override
 	protected void pluginSetup()
 	{
-		addComponent(Nope.class);
+		addComponent(DeleteTest.class);
 	}
 }
