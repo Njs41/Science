@@ -5,5 +5,5 @@ authors: []
 depend: []
 description:
 commands:
-  testpacket:
+  deletetest:
     description: Test command
