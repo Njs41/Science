@@ -6,9 +6,9 @@ import no.runsafe.framework.minecraft.item.meta.RunsafeMeta;
 
 import java.util.Map;
 
-public class DeleteTest extends PlayerCommand
+public class Nope extends PlayerCommand
 {
-	public DeleteTest()
+	public Nope()
 	{
 		super("deletetest", "Delete test", "runsafe.science");
 	}
