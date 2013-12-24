@@ -18,6 +18,7 @@ public class DeleteTest extends PlayerCommand
 	{
 		RunsafeMeta handItem = executor.getItemInHand();
 		executor.getInventory().getRaw().remove(handItem.getRaw());
+		executor.updateInventory();
 		return "Done";
 	}
 }
