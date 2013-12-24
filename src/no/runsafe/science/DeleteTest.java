@@ -10,7 +10,7 @@ public class DeleteTest extends PlayerCommand
 {
 	public DeleteTest()
 	{
-		super("deletetest", "Delete test", "runsafe.science");
+		super("test", "Delete test", "runsafe.science");
 	}
 
 	@Override
