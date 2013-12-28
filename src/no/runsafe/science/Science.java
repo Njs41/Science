@@ -9,6 +9,6 @@ public class Science extends RunsafePlugin
 	protected void pluginSetup()
 	{
 		addComponent(Commands.class);
-		addComponent(DeleteTest.class);
+		addComponent(Test.class);
 	}
 }
