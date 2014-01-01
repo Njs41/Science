@@ -11,6 +11,7 @@ import no.runsafe.framework.minecraft.item.meta.RunsafeMeta;
 import no.runsafe.framework.minecraft.networking.PacketWorldParticle;
 import no.runsafe.framework.minecraft.networking.WorldParticleOffset;
 import org.bukkit.block.Block;
+import org.bukkit.block.BlockState;
 
 import java.util.Map;
 
@@ -29,8 +30,9 @@ public class Test extends PlayerCommand
 		RunsafeMeta meta = Item.BuildingBlock.Quartz.Chiseled.getItem();
 		Block block = ((RunsafeBlock) location.getBlock()).getRaw();
 		block.setType(meta.getType());
-		block.getState().setData(meta.getRaw().getData());
-		block.getState().update();
+		BlockState state = block.getState();
+		state.setData(meta.getData().getRaw());
+		state.update();
 		executor.sendPacket(new PacketWorldParticle(WorldEffect.MAGIC_CRIT, executor.getLocation(), new WorldParticleOffset(0, 0, 0), 1, 20));
 		return "Done";
 	}
