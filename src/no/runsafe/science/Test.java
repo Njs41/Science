@@ -1,7 +1,7 @@
 package no.runsafe.science;
 
 import no.runsafe.framework.api.ILocation;
-import no.runsafe.framework.api.block.IBlock;
+import no.runsafe.framework.api.command.argument.IArgumentList;
 import no.runsafe.framework.api.command.player.PlayerCommand;
 import no.runsafe.framework.api.player.IPlayer;
 import no.runsafe.framework.internal.extension.block.RunsafeBlock;
@@ -13,8 +13,6 @@ import no.runsafe.framework.minecraft.networking.WorldParticleOffset;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
 
-import java.util.Map;
-
 public class Test extends PlayerCommand
 {
 	public Test()
@@ -23,7 +21,7 @@ public class Test extends PlayerCommand
 	}
 
 	@Override
-	public String OnExecute(IPlayer executor, Map<String, String> parameters)
+	public String OnExecute(IPlayer executor, IArgumentList parameters)
 	{
 		ILocation location = executor.getLocation().clone();
 		location.offset(0, -1, 0);
